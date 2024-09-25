@@ -1,10 +1,12 @@
 import React from "react";
+import Sidebar from "./Components/Sidebar/Sidebar";
 
 const App = () => {
   return (
     <div className="app">
-      <h1>Lets build a Discord Clone!!</h1>
-      <h3>This is App Component!!!</h3>
+      {/* sidebar */}
+      <Sidebar />
+      {/* chat  */}
     </div>
   );
 };
