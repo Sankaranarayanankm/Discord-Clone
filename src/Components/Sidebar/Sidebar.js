@@ -3,6 +3,13 @@ import "./Sidebar.css";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SidebarChannel from "../SidebarChannel/SidebarChannel";
+import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import CallIcon from "@mui/icons-material/Call";
+import Avatar from "@mui/material/Avatar";
+import SettingsIcon from "@mui/icons-material/Settings";
+import MicIcon from "@mui/icons-material/Mic";
+import HeadsetIcon from "@mui/icons-material/Headset";
 
 const Sidebar = () => {
   return (
@@ -20,10 +27,35 @@ const Sidebar = () => {
           <AddIcon className="sidebar__addChannel" />
         </div>
         <div className="sidebar__channelsList">
-        <SidebarChannel />
+          <SidebarChannel />
+        </div>
       </div>
+      <div className="sidebar__voice">
+        <SignalCellularAltIcon
+          className="sidebar__voiceIcon"
+          fontSize="large"
+        />
+        <div className="sidebar__voiceInfo">
+          <h3>Voice Connected </h3>
+          <p>Stream</p>
+        </div>
+        <div className="sidebar__voiceIcons">
+          <InfoOutlinedIcon />
+          <CallIcon />
+        </div>
       </div>
-      
+      <div className="sidebar__profile">
+        <Avatar src="https://e1.pxfuel.com/desktop-wallpaper/903/679/desktop-wallpaper-97-aesthetic-best-profile-pic-for-instagram-for-boy-instagram-dp-boys.jpg" />
+        <div className="sidebar__profileInfo">
+          <h3>Moriarty</h3>
+          <p>#ThisIsMyId</p>
+        </div>
+        <div className="sidebar__profileIcons">
+          <MicIcon />
+          <HeadsetIcon />
+          <SettingsIcon />
+        </div>
+      </div>
     </div>
   );
 };
