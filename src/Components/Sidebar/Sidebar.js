@@ -10,8 +10,13 @@ import Avatar from "@mui/material/Avatar";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MicIcon from "@mui/icons-material/Mic";
 import HeadsetIcon from "@mui/icons-material/Headset";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../../store/slice/userSlice";
 
 const Sidebar = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -45,10 +50,14 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="sidebar__profile">
-        <Avatar src="https://e1.pxfuel.com/desktop-wallpaper/903/679/desktop-wallpaper-97-aesthetic-best-profile-pic-for-instagram-for-boy-instagram-dp-boys.jpg" />
+        <Avatar
+          style={{ cursor: "pointer" }}
+          onClick={() => dispatch(logout())}
+          src={user.photo}
+        />
         <div className="sidebar__profileInfo">
-          <h3>Moriarty</h3>
-          <p>#ThisIsMyId</p>
+          <h3>{user.displayName}</h3>
+          <p>#{user.uid.substring(0, 5)}</p>
         </div>
         <div className="sidebar__profileIcons">
           <MicIcon />
