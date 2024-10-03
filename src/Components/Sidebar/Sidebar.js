@@ -58,7 +58,6 @@ const Sidebar = () => {
           <AddIcon onClick={handleAddChannel} className="sidebar__addChannel" />
         </div>
         <div className="sidebar__channelsList">
-          {/* <SidebarChannel /> */}
           {channel.map((item) => (
             <SidebarChannel
               key={item.id}

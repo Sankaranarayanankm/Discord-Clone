@@ -8,12 +8,17 @@ import {
   Gif,
 } from "@mui/icons-material";
 import Message from "../Message/Message";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/slice/userSlice";
+import { selectChannelId, selectChannelName } from "../../store/slice/appSlice";
 
 const Chat = () => {
+  const user = useSelector(selectUser);
+  const channelId = useSelector(selectChannelId);
+  const channelName = useSelector(selectChannelName);
   return (
     <div className="chat">
-      <h2>This is the Chat Component!</h2>
-      <ChatHeader />
+      <ChatHeader channelName={channelName} />
       <div className="chat__messages">
         <Message />
         <Message />
